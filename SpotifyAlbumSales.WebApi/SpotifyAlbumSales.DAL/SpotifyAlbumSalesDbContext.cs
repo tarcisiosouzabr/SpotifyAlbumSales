@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SpotifyAlbumSales.DAL.Infra;
+using SpotifyAlbumSales.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,12 +11,24 @@ namespace SpotifyAlbumSales.DAL
 {
     public class SpotifyAlbumSalesDbContext : DbContext, ISpotifyAlbumSalesDbContext
     {
-    //    public DbSet<User> User { get; set; }
-    //    public IQueryable<User> UserQuery { get { return User; } }
+        public DbSet<Genre> Genre { get; set; }
+        public IQueryable<Genre> GenreQuery { get { return Genre; } }
+
+        public DbSet<GenreCashback> GenreCashback { get; set; }
+        public IQueryable<GenreCashback> GenreCashbackQuery { get { return GenreCashback; } }
+
+        public DbSet<Album> Album { get; set; }
+        public IQueryable<Album> AlbumQuery { get { return Album; } }
+
+        public DbSet<Sale> Sale { get; set; }
+        public IQueryable<Sale> SaleQuery { get { return Sale; } }
+
+        public DbSet<SaleItens> SaleItens { get; set; }
+        public IQueryable<SaleItens> SaleItensQuery { get { return SaleItens; } }
 
         #region Infra
 
-        public SpotifyAlbumSalesDbContext (DbContextOptions op) : base(op)
+        public SpotifyAlbumSalesDbContext(DbContextOptions op) : base(op)
         {
 
         }

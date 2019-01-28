@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SpotifyAlbumSales.Entities;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SpotifyAlbumSales.DAL.Infra
@@ -12,6 +14,10 @@ namespace SpotifyAlbumSales.DAL.Infra
         Task Delete<TEntity>(TEntity entity) where TEntity : class;
         #endregion
 
-        //IQueryable<User> UserQuery { get; }
+        IQueryable<Genre> GenreQuery { get; }
+        IQueryable<GenreCashback> GenreCashbackQuery { get; }
+        IQueryable<Album> AlbumQuery { get; }
+        IQueryable<Sale> SaleQuery { get; }
+        IQueryable<SaleItens> SaleItensQuery { get; }
     }
 }
