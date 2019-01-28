@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SpotifyAlbumSales.BLL.Infra\SpotifyAlbumSales.BLL.Infra.csproj" />
     <ProjectReference Include="..\SpotifyAlbumSales.DAL.Infra\SpotifyAlbumSales.DAL.Infra.csproj" />
+    <ProjectReference Include="..\SpotifyAlbumSales.Entities\SpotifyAlbumSales.Entities.csproj" />
   </ItemGroup>
 
 </Project>

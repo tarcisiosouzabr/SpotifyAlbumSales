@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SpotifyAlbumSales.DAL.Infra\SpotifyAlbumSales.DAL.Infra.csproj" />
+    <ProjectReference Include="..\SpotifyAlbumSales.Entities\SpotifyAlbumSales.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
