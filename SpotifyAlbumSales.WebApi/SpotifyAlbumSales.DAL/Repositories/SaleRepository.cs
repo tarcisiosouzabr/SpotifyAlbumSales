@@ -16,6 +16,11 @@ namespace SpotifyAlbumSales.DAL.Repositories
         {
         }
 
+        public Task AddAsync(Sale sale)
+        {
+            return _dbContext.Add(sale);
+        }
+
         public Task<List<Sale>> GetAsync(DateTime? initialDate, DateTime? finalDate, int page, int pageSize)
         {
             return _dbContext.SaleQuery

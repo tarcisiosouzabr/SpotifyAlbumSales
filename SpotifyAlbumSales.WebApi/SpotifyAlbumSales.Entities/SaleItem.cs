@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SpotifyAlbumSales.Entities
 {
-    public class SaleItens
+    public class SaleItem
     {
         [Key]
         public Guid Id { get; set; }

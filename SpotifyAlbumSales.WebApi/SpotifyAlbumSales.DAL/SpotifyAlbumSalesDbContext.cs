@@ -23,8 +23,8 @@ namespace SpotifyAlbumSales.DAL
         public DbSet<Sale> Sale { get; set; }
         public IQueryable<Sale> SaleQuery { get { return Sale; } }
 
-        public DbSet<SaleItens> SaleItens { get; set; }
-        public IQueryable<SaleItens> SaleItensQuery { get { return SaleItens; } }
+        public DbSet<SaleItem> SaleItens { get; set; }
+        public IQueryable<SaleItem> SaleItensQuery { get { return SaleItens; } }
 
         #region Infra
 

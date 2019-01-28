@@ -10,5 +10,6 @@ namespace SpotifyAlbumSales.BLL.Infra
     {
         Task<List<Sale>> GetAsync(DateTime? initialDate, DateTime? finalDate, int page, int pageSize);
         Task<Sale> GetByIdAsync(Guid id);
+        Task<Sale> SaleAsync(Guid[] albunsId);
     }
 }

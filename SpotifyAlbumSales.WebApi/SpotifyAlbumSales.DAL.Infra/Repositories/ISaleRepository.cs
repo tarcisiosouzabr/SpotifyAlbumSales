@@ -10,5 +10,6 @@ namespace SpotifyAlbumSales.DAL.Infra.Repositories
     {
         Task<List<Sale>> GetAsync(DateTime? initialDate, DateTime? finalDate, int page, int pageSize);
         Task<Sale> GetByIdAsync(Guid id);
+        Task AddAsync(Sale sale);
     }
 }

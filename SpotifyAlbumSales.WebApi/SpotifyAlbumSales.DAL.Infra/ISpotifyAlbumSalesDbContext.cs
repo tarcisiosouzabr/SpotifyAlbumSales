@@ -18,6 +18,6 @@ namespace SpotifyAlbumSales.DAL.Infra
         IQueryable<GenreCashback> GenreCashbackQuery { get; }
         IQueryable<Album> AlbumQuery { get; }
         IQueryable<Sale> SaleQuery { get; }
-        IQueryable<SaleItens> SaleItensQuery { get; }
+        IQueryable<SaleItem> SaleItensQuery { get; }
     }
 }
