@@ -27,7 +27,7 @@ namespace SpotifyAlbumSales.DAL.Repositories
                 .Where(x => 
                     (initialDate == null || x.CreatedDate >= initialDate) && 
                     (finalDate == null || x.CreatedDate <= finalDate))
-                .OrderByDescending(x => x.CreatedDate).Skip((page + 1) * pageSize).Take(pageSize).ToListAsync();
+                .OrderByDescending(x => x.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
         }
 
         public Task<Sale> GetByIdAsync(Guid id)

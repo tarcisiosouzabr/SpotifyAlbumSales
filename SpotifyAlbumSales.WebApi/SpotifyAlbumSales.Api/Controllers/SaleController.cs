@@ -19,12 +19,12 @@ namespace SpotifyAlbumSales.WebApi.Controllers
         }
 
         [Route("/get"), HttpGet]
-        public async Task<IActionResult> GetAsync([FromQuery]DateTime initialDate, [FromQuery]DateTime finalDate, [FromQuery]int page = 1, [FromQuery]int pageSize = 10)
+        public async Task<IActionResult> GetAsync([FromQuery]DateTime? initialDate, [FromQuery]DateTime? finalDate, [FromQuery]int page = 1, [FromQuery]int pageSize = 10)
         {
             return Ok(await _uow.SaleBLL.GetAsync(initialDate, finalDate, page, pageSize));
         }
 
-        [Route("/{saleId}"), HttpGet]
+        [Route("/getbyid"), HttpGet]
         public async Task<IActionResult> GetByIdAsync([FromQuery]Guid saleId)
         {
             return Ok(await _uow.SaleBLL.GetByIdAsync(saleId));

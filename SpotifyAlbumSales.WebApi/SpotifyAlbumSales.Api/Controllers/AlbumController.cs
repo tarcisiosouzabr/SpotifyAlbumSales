@@ -21,7 +21,7 @@ namespace SpotifyAlbumSales.Api.Controllers
             return Ok(await _uow.AlbumBLL.GetAsync(genreId, page, pageSize));
         }
 
-        [Route("/{albumId}"), HttpGet]
+        [Route("api/album/getbyid"), HttpGet]
         public async Task<IActionResult> GetByIdAsync([FromQuery]Guid albumId)
         {
             return Ok(await _uow.AlbumBLL.GetByIdAsync(albumId));

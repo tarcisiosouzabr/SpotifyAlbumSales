@@ -18,7 +18,7 @@ namespace SpotifyAlbumSales.DAL.Repositories
 
         public Task<List<Album>> GetAsync(int? genreId, int page, int pageSize)
         {
-            return _dbContext.AlbumQuery.Where(x => (genreId == null) || x.GenreId == genreId).OrderBy(x => x.Name).Skip(page * pageSize).Take(pageSize).ToListAsync();
+            return _dbContext.AlbumQuery.Where(x => (genreId == null) || x.GenreId == genreId).OrderBy(x => x.Name).Skip((page -1) * pageSize).Take(pageSize).ToListAsync();
         }
 
         public Task<Album> GetByIdAsync(Guid id)
