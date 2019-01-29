@@ -15,12 +15,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+    <PackageReference Include="NSwag.AspNetCore" Version="12.0.13" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +26,12 @@
     <ProjectReference Include="..\SpotifyAlbumSales.DAL.Infra\SpotifyAlbumSales.DAL.Infra.csproj" />
     <ProjectReference Include="..\SpotifyAlbumSales.DAL\SpotifyAlbumSales.DAL.csproj" />
     <ProjectReference Include="..\SpotifyAlbumSales.Entities\SpotifyAlbumSales.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.PlatformAbstractions">
+      <HintPath>..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.platformabstractions\1.1.0\lib\netstandard1.3\Microsoft.Extensions.PlatformAbstractions.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
