@@ -46,17 +46,17 @@ namespace SpotifyAlbumSales.BLL
             await _saleRepository.AddAsync(sale);
             foreach (var item in albunsId)
             {
-                var album = await _albumRepository.GetByIdAsync(item);
-                if (album == null)
-                    throw new NullReferenceException("Album não encontrado");
+                //var album = await _albumRepository.GetByIdAsync(item);
+                //if (album == null)
+                //    throw new NullReferenceException("Album não encontrado");
 
-                var cashbackPercentual = await _genreCashbackRepository.GetCashBackAsync(album.GenreId, (int)DateTime.UtcNow.DayOfWeek);
-                var saleItem = new SaleItem() {
-                    AlbumId = item,
-                    SaleId = sale.Id,
-                    Cashback = cashbackPercentual / album.Value 
-                };
-                await _saleItemRepository.AddAsync(saleItem);
+                //var cashbackPercentual = await _genreCashbackRepository.GetCashBackAsync(album.GenreId, (int)DateTime.UtcNow.DayOfWeek);
+                //var saleItem = new SaleItem() {
+                //    AlbumId = item,
+                //    SaleId = sale.Id,
+                //    Cashback = cashbackPercentual / album.Value 
+                //};
+                //await _saleItemRepository.AddAsync(saleItem);
             }
             await _dbContext.SaveChangesAsync();
             return sale;
