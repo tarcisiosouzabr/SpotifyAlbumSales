@@ -5,6 +5,7 @@ using SpotifyAlbumSales.Api.Infra;
 using SpotifyAlbumSales.Api.UoWs;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -25,18 +26,21 @@ namespace SpotifyAlbumSales.Api.Controllers
             _externalData = externalData;
         }
 
+        [Description("Consulta o catálogo de discos de forma paginada, filtrando por gênero e ordenando de forma crescente pelo nome do disco")]
         [Route("api/album/get"), HttpGet]
         public async Task<IActionResult> GetAsync([FromQuery]int? genreId, [FromQuery]int page = 1, [FromQuery]int pageSize = 10)
         {
             return Ok(await _uow.AlbumBLL.GetAsync(genreId, page, pageSize));
         }
 
+        [Description("Consulta o disco pelo seu identificador")]
         [Route("api/album/getbyid"), HttpGet]
         public async Task<IActionResult> GetByIdAsync([FromQuery]Guid albumId)
         {
             return Ok(await _uow.AlbumBLL.GetByIdAsync(albumId));
         }
 
+        [Description("Busca da api do Spotify 50 discos para cada genêro cadastrado na tabela de genêros")]
         [Route("api/album/filldata"), HttpPost]
         public async Task<IActionResult> PostFillDataAsync()
         {
