@@ -45,12 +45,14 @@ namespace SpotifyAlbumSales.Api.Controllers
             var queryClient = _httpClientFactory.CreateClient("SpotifyHttpClientSearch");
             queryClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + authResponse.access_token);
             var genres = await _uow.AlbumBLL.GetGenresAsync();
+            int dataFound = 0;
             foreach (var genre in genres)
             {
                 var searchResponse = await _externalData.SearchByGenreAsync(queryClient, authResponse, genre.Name);
                 await _uow.AlbumBLL.AddAlbunsAsync(searchResponse.albums.items.Select(x => x.name).ToList(), genre.Id);
+                dataFound += searchResponse.albums.items.Count();
             }
-            return Ok();
+            return Ok(new { message = String.Format("{0} albuns adicionados.", dataFound) });
         }
     }
 }

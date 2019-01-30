@@ -55,7 +55,7 @@ namespace SpotifyAlbumSales.BLL
                 {
                     AlbumId = item,
                     SaleId = sale.Id,
-                    Cashback = (cashbackPercentual * 100) / album.Value,
+                    Cashback = (album.Value / 100) * (cashbackPercentual * 100),
                     Id = Guid.NewGuid()
                 };
                 await _saleItemRepository.AddAsync(saleItem);
