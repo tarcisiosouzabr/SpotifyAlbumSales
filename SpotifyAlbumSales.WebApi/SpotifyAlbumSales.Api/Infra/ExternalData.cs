@@ -19,7 +19,8 @@ namespace SpotifyAlbumSales.Api.Infra
 
         public async Task<SearchAlbumResponse> SearchByGenreAsync(HttpClient searchClient, AuthResponse tokenResponse, string genre)
         {
-            var authResponse = await searchClient.GetAsync("search?q=" + genre + "&type=album");
+            searchClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + tokenResponse.access_token);
+            var authResponse = await searchClient.GetAsync("search?q=" + genre + "&type=album&limit=50");
             var jsonString = await authResponse.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<SearchAlbumResponse>(jsonString);
         }

@@ -40,8 +40,9 @@ namespace SpotifyAlbumSales.Api.Controllers
         public async Task<IActionResult> PostFillDataAsync()
         {
             var authClient = _httpClientFactory.CreateClient("SpotifyHttpClientAuth");
-            var authResponse = await _externalData.Authentication(authClient);
+            var authResponse = await _externalData.AuthenticationAsync(authClient);
             var queryClient = _httpClientFactory.CreateClient("SpotifyHttpClientSearch");
+            var searchResponse = await _externalData.SearchByGenreAsync(queryClient, authResponse, "POP");
             return Ok();
         }
     }
