@@ -19,7 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyAlbumSales.BLL.Infra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyAlbumSales.DAL.Infra", "SpotifyAlbumSales.DAL.Infra\SpotifyAlbumSales.DAL.Infra.csproj", "{E2C825C7-AAB0-45FB-8AE2-F9323D7555F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyAlbumSales.Api", "SpotifyAlbumSales.Api\SpotifyAlbumSales.Api.csproj", "{B3E2CCF2-A833-40AF-88D4-8601CA727875}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyAlbumSales.Api", "SpotifyAlbumSales.Api\SpotifyAlbumSales.Api.csproj", "{B3E2CCF2-A833-40AF-88D4-8601CA727875}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8AE9B9D4-87F0-40DE-B3AB-F5FF9A4C608E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyAlbumSales.WebApi.Test", "SpotifyAlbumSales.WebApi.Test\SpotifyAlbumSales.WebApi.Test.csproj", "{EA3D80A6-AA6F-4F00-9BAE-2A62E50E4EB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,10 @@ Global
 		{B3E2CCF2-A833-40AF-88D4-8601CA727875}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3E2CCF2-A833-40AF-88D4-8601CA727875}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3E2CCF2-A833-40AF-88D4-8601CA727875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3D80A6-AA6F-4F00-9BAE-2A62E50E4EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3D80A6-AA6F-4F00-9BAE-2A62E50E4EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3D80A6-AA6F-4F00-9BAE-2A62E50E4EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3D80A6-AA6F-4F00-9BAE-2A62E50E4EB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{5CC9C279-A9E1-4731-9312-26948340CB1F} = {80846878-31F4-4C0A-9DFF-0719523BA7A8}
 		{E2C825C7-AAB0-45FB-8AE2-F9323D7555F4} = {D73771DA-46FA-4BAA-816C-1DCCBE8359B1}
 		{B3E2CCF2-A833-40AF-88D4-8601CA727875} = {9C903074-E0FE-4BDB-A4EF-9D9E03EBCB6F}
+		{EA3D80A6-AA6F-4F00-9BAE-2A62E50E4EB7} = {8AE9B9D4-87F0-40DE-B3AB-F5FF9A4C608E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {15655005-73A5-44CC-B102-412E22D20818}
