@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpotifyAlbumSales.DAL.Infra\SpotifyAlbumSales.DAL.Infra.csproj" />
+    <ProjectReference Include="..\SpotifyAlbumSales.Entities\SpotifyAlbumSales.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
