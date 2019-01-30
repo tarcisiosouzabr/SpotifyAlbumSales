@@ -5,6 +5,7 @@ using SpotifyAlbumSales.Api.Infra;
 using SpotifyAlbumSales.Api.UoWs;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -42,7 +43,13 @@ namespace SpotifyAlbumSales.Api.Controllers
             var authClient = _httpClientFactory.CreateClient("SpotifyHttpClientAuth");
             var authResponse = await _externalData.AuthenticationAsync(authClient);
             var queryClient = _httpClientFactory.CreateClient("SpotifyHttpClientSearch");
-            var searchResponse = await _externalData.SearchByGenreAsync(queryClient, authResponse, "POP");
+            queryClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + authResponse.access_token);
+            var genres = await _uow.AlbumBLL.GetGenresAsync();
+            foreach (var genre in genres)
+            {
+                var searchResponse = await _externalData.SearchByGenreAsync(queryClient, authResponse, genre.Name);
+                await _uow.AlbumBLL.AddAlbunsAsync(searchResponse.albums.items.Select(x => x.name).ToList(), genre.Id);
+            }
             return Ok();
         }
     }

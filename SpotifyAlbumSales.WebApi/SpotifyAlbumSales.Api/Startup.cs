@@ -49,6 +49,7 @@ namespace SpotifyAlbumSales.Api
             services.AddScoped<IGenreCashbackRepository, GenreCashbackRepository>();
             services.AddScoped<ISaleItemRepository, SaleItemRepository>();
             services.AddScoped<ISaleRepository, SaleRepository>();
+            services.AddScoped<IGenreRepository, GenreRepository>();
             #endregion
 
             services.AddScoped<IExternalData, ExternalData>();

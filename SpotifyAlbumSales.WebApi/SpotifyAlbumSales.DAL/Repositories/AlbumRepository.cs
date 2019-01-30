@@ -5,7 +5,6 @@ using SpotifyAlbumSales.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SpotifyAlbumSales.DAL.Repositories
@@ -14,6 +13,11 @@ namespace SpotifyAlbumSales.DAL.Repositories
     {
         public AlbumRepository(ISpotifyAlbumSalesDbContext dbContext) : base(dbContext)
         {
+        }
+
+        public Task AddAsync(Album album)
+        {
+            return _dbContext.Add(album);
         }
 
         public Task<List<Album>> GetAsync(int? genreId, int page, int pageSize)

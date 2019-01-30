@@ -9,5 +9,7 @@ namespace SpotifyAlbumSales.BLL.Infra
     {
         Task<List<Album>> GetAsync(int? genreId, int page, int pageSize);
         Task<Album> GetByIdAsync(Guid id);
+        Task<List<Genre>> GetGenresAsync();
+        Task AddAlbunsAsync(List<string> albuns, int genreId);
     }
 }

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace SpotifyAlbumSales.DAL.Infra.Repositories
 {
-    public interface IAlbumRepository
+    public interface IGenreRepository
     {
-        Task<List<Album>> GetAsync (int? genreId, int page, int pageSize);
-        Task<Album> GetByIdAsync(Guid id);
-        Task AddAsync(Album album);
+        Task<List<Genre>> GetGenresToSearchAsync();
+        Task AddAsync(Genre genre);
     }
 }
